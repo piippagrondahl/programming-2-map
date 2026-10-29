@@ -69,28 +69,21 @@ public class MapBasics {
      * is not in the map, return null.
      */
     public String getValue(Map<String, String> map, String key) {
-        map.get(key);
-        return key;
+        return map.get(key);
     }
 
     /**
      * Return true if the given map contains the given key, false otherwise.
      */
     public boolean hasKey(Map<String, String> map, String key) {
-        if (!map.get(key).isEmpty()) {
-            return true;
-        } else{
-        return false;
-    } }
+        return map.containsKey(key);
+    } 
 
     /**
      * Return true if the given map contains the given value, false otherwise.
      */
     public boolean hasValue(Map<String, String> map, String value) {
-        if (map.containsKey(value)) {
-            return true;
-        } else {
-        return false; }
+        return map.containsValue(value);
     }
 
     /**
@@ -98,10 +91,10 @@ public class MapBasics {
      * the map.
      */
     public void addIfNotPresent(Map<String, String> map, String key, String value) {
-        Map<String, String> yay = new HashMap<>();
-        //?????????????????
-        map.add(key, value);
+        if (!map.containsKey(key)) {
+        map.put(key, value);
     }
+}
 
     /**
      * Remove the entry with the given key from the given map.
@@ -142,6 +135,7 @@ public class MapBasics {
      * Return the largest Integer value in the map. If the map is empty, return
      * null.
      */
+    //???????????????????
     public Integer largestValue(Map<String, Integer> map) {
         int largest = map.get(0);
 
@@ -169,9 +163,8 @@ public class MapBasics {
 
         int sum = 0;
 
-        for (int i = 0; i < map.size(); i++) {
-            sum = sum + map.get(i);
-        }
+        for (Integer value : map.values()) {
+            sum = sum + value; }
 
         return sum;
     }
@@ -184,6 +177,9 @@ public class MapBasics {
      * maps should be modified.
      */
     public Map<String, String> combineMaps(Map<String, String> map1, Map<String, String> map2) {
+        Map<String, String> yeet = new HashMap<>();
+
+        
         return null;
     }
 
